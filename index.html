@@ -1,0 +1,281 @@
+<!--
+Define que este documento está usando html5.
+
+O html5 é a versão moderna do html, utilizada atualmente na criação de sites.
+-->
+<!doctype html>
+
+<!--
+A tag html envolve todo o conteudo da página.
+
+o atributo lang="pt-br" informa que o idioma principal da pagina é portugues do Brasil.
+-->
+<html lang="pt-BR">
+  <head>
+    <!--define o conjunto de caracteres da pagina.  
+  O UTF-8 permite que acentos e caracteres especiais apareçam corretamente no navegador.  
+  exemplos:
+  Atual Soluções
+  Gestão
+  Organização
+  -->
+    <meta charset="UTF-8" />
+
+    <!--essa configuração permite que o site se adapte melhor a celulares, tablets e computadores.
+  É essencial para sites responsivos.
+  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+Define o título que aparece na aba do navegador.
+-->
+    <title>Atual Soluções</title>
+
+    <!--Conecta o arquivo HTML ao arquivo CSS.
+  O CSS ficará responsável pela aparência visul da nossa página.
+  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!--Todo conteudo visivel do site ficará aqui dentro.
+  Exemplo: cabeçalho, textos, botões, imgens, QR Code e rodapé
+  -->
+
+    <!--HEADER, representa o cabeçalho principal do site.
+  Normalmente contém: nome da empresa, Logo, menu de navegação, busca, carrinho de compras, etc.
+  -->
+    <header class="header">
+      <!--CONTAINER, Usamos uma div com a  classe container para limitar a largura do conteudo e manter tudo alinhado.
+    Essa é uma pratica muito comum em sites profissionais.
+    -->
+      <div class="container">
+        <!--LOGO/NOME DA EMPRESA.
+      Aqui estamos usando um link porque normalmente o nome ou logo da empresa leva o usuario de volta pra o inicio do site.
+      -->
+        <a href="#" class="logo"> Atual Soluções </a>
+
+        <!--NAV, a tag nav representa uma área de navegação.
+      Usamos nav quando temos links importantes pra seções do proprio site
+      -->
+        <nav class="navigation">
+          <!--Link de MENU, a tag "a" cria um link clicável.
+        Neste caso, cada link levará futuramente para uma seção da propria página.
+        -->
+          <a href="#inicio" class="navigation-link">Início</a>
+          <a href="#sobre" class="navigation-link">Sobre</a>
+          <a href="#solucoes" class="navigation-link">Soluções</a>
+          <a href="#contato" class="navigation-link">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--MAIN, Representa o conteudo principal da página.
+  Tudo que for o conteudo mais importante do site deve ficar dentro da tag main.
+  -->
+    <main>
+      <!--HERO SECTION, Esta é a primeira seção de destaque do site.
+    Ela representa rapidamente: O serviço, o beneficio principal, uma chamada para contato, etc.
+    -->
+      <section id="inicio" class="hero">
+        <!--CONTAINER, Mantém o conteudo alinhado com o restante do site.
+      vamos reutilizar a mesma classe container do cabeçalho.
+      -->
+        <div class="container">
+          <!--TITULO PRINCIPAL, A tag h1 representa o titulo mais importante da pagina.
+        em uma pagina simples, usamos um h1 principal.
+        -->
+          <h1 class="hero-title">
+            Soluções em software para sua empresa vender mais e se organizar
+            melhor.
+          </h1>
+
+          <!--PARAGRAFO DE APOIO
+        A tag "p" representa um paragrafo de texto.
+        Aqui usamos para explicar melhor a proposta do serviço
+        -->
+          <p class="hero-description">
+            Consultoria comercial especializada para apresentar soluções que
+            ajudam empresas a melhorar a gestão, controle e os resultados.
+          </p>
+
+          <!--BOTAO CONTATO
+        A tag "a" cria um link clicável.
+        Mais adiante vamos trocar o # pelo link real do Whatsapp
+        -->
+          <a href="https://wa.me/552734421302?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Atual%20Solu%C3%A7%C3%B5es%20para%20minha%20empresa." class="button-primary" target="_blank" rel="noopener noreferrer">
+            Falar pelo WhatsApp 
+          </a>
+        </div>
+      </section>
+      <!--ABOUT SECTION
+    Esta seção apresenta o consultor e explica, de forma simples, como o serviço pode ajudar empresas.
+    -->
+      <section id="sobre" class="about">
+        <!--Container, mantem o conteudo alinhado com as outras seções do site.
+      -->
+        <div class="container">
+          <!--TITULO DA SEÇÂO, A tag h2 representa um titulo secundário.
+        Usamos h2 para titulos de seções importantes, abaixo do h1 principal da pagina
+        -->
+          <h2 class="section-title">Sobre a Atual Soluções</h2>
+
+          <!--TEXTO DE APRESENTAÇÂO, a tag "p" representa um paragrafo.
+        Aqui usamos para explicar de forma clara quem você é e qual serviço oferece.
+        -->
+          <p class="about-description">
+            A Atual Soluções atua com consultoria comercial, prospecção e
+            apresentação de softwares de gestão para empresas que desejam
+            melhorar seus processos, controlar melhor suas informações e tomar
+            decisões com mais segurança.
+          </p>
+
+          <!--TEXTO COMPLEMENTAR, Este segundo paragrafo reforça seu papel como consultor Master.
+        -->
+          <p class="about-description">
+            Como consultor Master responsável pela região, meu trabalho é
+            entender a necessidade de cada negócio e apresentar soluções
+            adequadas para melhorar a rotina da empresa.
+          </p>
+
+          <!--LINK PARA O SITE OFICIAL-->
+          <a
+           href="https://www.atualsistemas.com.br/"
+           class="about-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           >
+            Conhecer o site oficial da Atual Sistemas
+          </a>
+        </div>
+      </section>
+
+      <!--SOLUTIONS SECTIONS, Esta seção apresenta as principais soluções oferecidas pela Atual Soluções.
+    O objetivo é mostrar, de forma simples, quais problemas o serviço ajuda a resolver
+    -->
+      <section id="solucoes" class="solutions">
+        <!--Container, mantem o conteudo alinhado com as outras áreas do site-->
+        <div class="container">
+          <!--TITULO DA SEÇÂO, Usamos h2 porque este é o titulo principal desta seção, abaixo do h1 da pagina-->
+          <h2 class="section-title">Soluções para sua empresa</h2>
+
+          <!--DESCRIÇÂO DA SEÇÂO, este paragrafo explica rapidamente o objetivo das soluções apresentadas.-->
+          <p class="section-description">
+            Conheça algumas formas de como a Atual Soluções pode ajudar sua
+            empresa a ter mais organização, controle e eficiência.
+          </p>
+
+          <!--LISTA DE SOLUÇÔES, Este bloco agrupa os cards de soluções. Depois, no CSS, vamos organizar esses cards visualmente-->
+          <div class="solutions-list">
+            <!--CARD DE SOLUÇÂO, o article representa um conteudo independente dentro da seção.
+          Aqui usamos para cada solução apresentada
+          -->
+            <article class="solution-card">
+              <h3 class="solution-card-title">Software de gestão</h3>
+              <p class="solution-card-text">
+                Apresentação de soluções para controle de vendas, estoque,
+                financeiro e processos do dia a dia da empresa.
+              </p>
+            </article>
+
+            <!--CARD DE SOLUÇÂO-->
+            <article class="solution-card">
+              <h3 class="solution-card-title">Atendimento consultivo</h3>
+
+              <p class="solution-card-text">
+                Análise de necessidade do cliente para indicar a solução mais
+                adequada para cada tipo de negócio.
+              </p>
+            </article>
+
+            <!--CARD DE SOLUÇÃO-->
+            <article class="solution-card">
+              <h3 class="solution-card-title">Apoio comercial regional</h3>
+
+              <p class="solution-card-text">
+                Acompanhamento comercial na região, com foco em prospecção,
+                orientação e relacionamento com empresas.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--CONTACT SECTION, Essa seção tem como objetivo facilitar o contato do visitante com o consultor.
+    Aqui teremos, texto de chamada, botão para Whatsapp, QR Code para atendimento rápido
+    -->
+      <section id="contato" class="contact">
+        <!--Container, Mantem o conteudo alinhado com o restante do site-->
+        <div class="container">
+          <!--TIRULO DA SEÇÂO, usamos h2 porque este é o titulo principal da seção de contato-->
+          <h2 class="section-title">Fale comigo.</h2>
+
+          <!--TEXTO DE APOIO, Explica ao visitante como ele pode entrar em contato.-->
+          <p class="section-description">
+            Entre em contato pelo WhatsApp para conhecer melhor as soluções
+            disponíveis para sua empresa.
+          </p>
+
+          <!--ÁREA DE CONTATO, este bloco agrupa o botão e o QR Code.
+          No CSS, depois vamos organizar visualmente essa área.
+          -->
+          <div class="contact-content">
+            <!--BOTÃO DE WHATSAPP, por enquanto usamos #
+            Depois vamos trocar pelo link real do Whatsapp, no formato: https://wa.me/5551999999999
+            -->
+            <a href="https://wa.me/552734421302?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Atual%20Solu%C3%A7%C3%B5es%20para%20minha%20empresa." class="button-primary" target="_blank" rel="noopener noreferrer"> 
+              Chamar no WhatsApp 
+            </a>
+
+
+            <a href="https://wa.me/552734421302?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Atual%20Solu%C3%A7%C3%B5es%20para%20minha%20empresa."
+              target="_blank"
+             rel="noopener noreferrer"
+            class="contact-qrcode-link"
+            >
+            
+
+            <!--QR CODE, A tag img exibe uma imagem na página.
+            O arquivo do QR Code deverá ficar dentro da pasta: assets/img/
+            -->
+            <img
+              src="assets/img/qrcode-whatsapp.png"
+              alt="QR Code para falar com a Atual Soluções pelo WhatsApp"
+              class="contact-qrcode"
+            >
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER
+  Representa o rodapé do site.
+  Normalmente contém:
+  Nome da empresa
+  Informações de contato
+  Direitos autorais
+  Links importantes
+  -->
+    <footer class="footer">
+      <!--CONTAINER, mantem o conteudo do rodapé alinhado com as outras seções do site.-->
+      <div class="container">
+        <!--TEXTO DO RODAPÉ, Usamos a tag p para criar um paragrafo simples com informações institucionais-->
+        <p class="footer-text">
+          Atual Soluções — Consultoria comercial em software de gestão.
+        </p>
+
+        <!--TEXTO DE DIREITOS AUTORAIS, Este texto informa que o conteudo pertence a marca/serviço apresentado no site-->
+        <p class="footer-copy">
+          © 2026 Atual Soluções. Todos os direitos reservados.
+        </p>
+
+        <!--CRÉDITO DO DESENVOLVEDOR, Este texto identifica quem desenvolveu o site.
+        É uma forma simples de registrar autoria e tambem divulgar seu trabalho-->
+        <p class="footer-credit">
+          Site desenvolvido por: Darlan Alves | Front-End Developer
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

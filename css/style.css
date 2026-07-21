@@ -1,0 +1,364 @@
+/*RESET BASICO, o navegador ja aplica alguns estilos automaticamente.
+Por exemplo: o body vem com margem padrão, titulos tem margens proprias, links tem estilos proprios, Aqui removemos algumas dessas diferenças para começar o progeto com mais controle*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*VARIÁVEIS GLOBAIS
+Aqui guardamos valores reutilizáveis do projeto, como cores principais, cores de texto e cores de fundo.
+Isso facilita a manutenção do site.*/
+:root{
+   --color-primary: #00A886;
+    --color-primary-dark: #008f73;
+
+    --color-text: #222222;
+    --color-text-medium: #444444;
+    --color-text-light: #555555;
+    --color-menu-link: #333333;
+
+    --color-background: #ffffff;
+    --color-background-soft: #f2fbf8;
+
+    --color-border: #eeeeee;
+    --color-footer: #222222;
+    --color-footer-text: #cccccc;
+    --color-footer-credit: #aaaaaa;
+    --color-focus: #004d3f;
+
+    /* BORDAS ARREDONDADAS */
+    --radius-small: 6px;
+    --radius-medium: 8px;
+    --radius-large: 10px;
+
+    /*SOMBRAS*/
+    --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.10);
+    --shadow-card-hover: 0 8px 22px rgba(0, 0, 0, 0.18);
+
+    /*TRANSIÇÕES*/
+    --transition-default: 0.3s ease;
+}
+
+/*HTML, A propriedade scroll-behavior: smooth faz com que a rolagem ate as seções do site sejam suave.
+Isso sera usado quando o usuario clicar no menu: inicio, sobre, soluções ou contato.*/
+html{
+  scroll-behavior: smooth;
+}
+
+/*BODY, A tag body representa todo o corpo visivel da pagina, aqui definimos, fonte principal do site, cor de fundo, cor padrão dos textos, altura de linha para melhorar a leitura.*/
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/*CONTAINER, limita a largura maxima do conteudo e mantem os elementos centralizados na pagina.
+Essa classe sera reutilizada em varias partes do site: Cabeçalho, hero, sobre, soluções, contato, rodapé*/
+.container{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*HEADER, representa o cabeçalho principal do site, aqui definimos: cor de fundo, espaçamento interno, borda inferior, organização visual do topo.*/
+.header{
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 0;
+}
+
+/*CONTAINER DENTRO DO HEADER, Aqui usamos flexbox para colocar: logo de um lado, menu do outro lado.
+O display flex organiza os elementos lado a lado*/
+.header .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/*LOGO, Estuliza o nome Atual Soluções no cabeçalho.
+Mesmo sendo texto, ele funciona como identidade visual principal do site neste primeiro momento.*/
+.logo{
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/*NAVIGATION, representa o menu de navegação. Usamos flexbox para deixar os links lado a lado, O gap cria espaço entre os links*/
+.navigation{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/*NAVIGATION LINK, Estiliza cada link do menu. Removemos o sublinhado padrão e definimos uma cor mais discreta para combinar com o estili comercial.*/
+.navigation-link{
+  font-size: 15px;
+  color: var(--color-menu-link);
+  text-decoration: none;
+  transition: color var(--transition-default);
+}
+
+/*EFEITO DOS LINKS DO MENU.
+Quando o usuario passa o mouse sobre um link, a cor muda para a cor principal da marca.
+Isso melhora a experiencia visual e mostra que o item é clicável.*/
+.navigation-link:hover{
+  color: var(--color-primary);
+}
+
+/*FOCO DOS LINKS E BOTÕES
+O focus aparece quando o usuario navega pelo teclado, principalmente usando a tecla tab.
+Isso melhora a acessibilidade e ajuda o usuario a saber qual elemento está selecionado*/
+.button-primary:focus,
+.navigation-link:focus,
+.contact-qrcode-link:focus{
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+/*HERO, Representa a primeira seção de destaque do site.
+Aqui definimos, espaçamento interno, fundo claro, alinhamento do texto*/
+.hero{
+  padding: 60px 0;
+  background-color: var(--color-background-soft);
+  text-align: center;
+}
+
+/*TITULO DA HERO, estiliza o titulo principal da pagina.
+Esse é o texto mais importante da landing page, por isso ele precisa ter destaque visual.*/
+.hero-title{
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+/*DESCRIÇÃO DA HERO, Estiliza o texto de apoio abaixo do titulo principal.
+Esse texto explica melhor a proposta do serviço*/
+.hero-description{
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 16px;
+  color: var(--color-text-medium);
+}
+
+/*BOTÃO PRINCIPAL, Estiliza os links que funcionam como botões principais.
+Usaremos essa mesma classe em mais de uma parte do site, como na hero e na seção contato.*/
+.button-primary{
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: var(--radius-small);
+  transition: background-color var(--transition-default);
+}
+
+/*EFEITO DO BOTÃO PRINCIPAL, O hover é aplicado quando o usuario passa o mouse sobre o botão.
+Aqui escurecemos levemente o botão para indicar que ele é clicável.*/
+.button-primary:hover{
+  background-color: var(--color-primary-dark);
+}
+
+/* SEÇÕES GERAIS, Define um espaçamento vertical padrão para as seções principais do site.
+Esse espaçamento cria respiro entre os blocos da pagina*/
+.about, .solutions, .contact{
+  padding: 50px 0;
+}
+
+/*TITULOS DAS SEÇÕES, Estiliza os titulos principais das seções, como: sobre a Atual Soluções, Soluções para sua empresa, Falei comigo*/
+.section-title{
+  margin-bottom: 16px;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/*DESCRIÇÃO DAS SEÇÕES, Estiliza textos explicativos que aparecem abaixo dos titulos principaos das seções*/
+.section-description{
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 17px;
+  color: var(--color-text-medium);
+  text-align: center;
+}
+
+/*SEÇÃO SOBRE, Centraliza e limita a largura dos textos da seção SOBRE.
+Isso melhora a leitura e evita linhas muitos longas.*/
+.about-description{
+max-width: 800px;
+margin: 0 auto 16px;
+font-size: 17px;
+color: var(--color-text-medium);
+text-align: center;
+}
+
+/*LINK DA SEÇÃO SOBRE
+Usado para direcionar o visitante ao site oficial da empresa.
+É um link secundário, por isso não tem aparencia de botão principa.*/
+.about-link{
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color var(--transition-default);
+}
+
+.about-link:hover{
+  color: var(--color-primary-dark);
+}
+
+.about-link:focus{
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.about .container{
+  text-align: center;
+}
+
+/*LISTA DE SOLUÇÔES, Organiza os cards da seção soluções.
+Usamos display flex para colocar os cards lado a lado em telas maiores*/
+.solutions-list{
+  display: flex;
+  flex-direction: column;
+    gap:24px;
+}
+
+/*CARD DE SOLUÇÂO. Cada card representa uma solução oferecida.
+Aqui definimos: fundo branco, espacamento interno, bordas arredondadas, sombra leve, largura proporcional*/
+.solution-card{
+  flex: 1;
+  padding: 28px;
+  background-color: var(--color-background);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+}
+
+/* EFEITO DO CARD
+Quando o usario passa o mouse sobre o card, ele sobre levemente e ganha uma sombra um pouco maior.
+Isso cria a sensação de profundidade e deixa a interfaze mais agradável.*/
+.solution-card:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/*TITULO DO CARD, Estiliza o titulo de cada solução.*/
+.solution-card-title{
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+/*TEXTO DO CARD, Estiliza o texto explicativo dentro de cada card.*/
+.solution-card-text{
+  font-size: 16px;
+  color: var(--color-text-light);
+}
+
+/*SEÇÂO CONTATO, Usamos um fundo claro para destacar a area de contato e separar visualmente essa seção das anteriores.*/
+.contact{
+  background-color: var(--color-background-soft);
+}
+
+/*CONTEUDO DO CONTATO, Organiza o botão e o QR Code.
+Usamos flexbox para alinhar os elementos no centro e permitir espaçamento entre eles.*/
+.contact-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/*QR CODE DO CONTATO, Define um tamanho controlado para o QR Code.
+O max-width evita que a imagem fique grandee demais em telas menores*/
+.contact-qrcode{
+  width: 180px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/*LINK DO QR CODE, Faz o link ocupar apenas o tamanho da imagem.
+Isso evita comportamentos estranhos de espaçamento ao redor do QR Code.*/
+.contact-qrcode-link{
+  display: inline-block;
+}
+
+/*FOOTER, Representa o rodapé do site, Aqui criamos uma area final simples, com fundo escuro, textos centralizados e boa separação visual.*/
+.footer{
+  padding: 30px 0;
+  background-color: var(--color-footer);
+  color: #ffffff;
+  text-align: center;
+}
+
+/*TEXTO PRINCIPAL DO RODAPÈ, Estiliza a frase institucional da Atual Soluções.*/
+.footer-text{
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/*TEXTO DE DIREITOS AUTORAIS, Estiliza o texto menor de direitos autorais.*/
+.footer-copy{
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--color-footer-text);
+}
+
+/*CREDITO DO DESENVOLVEDOR, Estiliza a identificação de quem desenvolveu o site.
+Deixamos esse texto menor e mais discreto para não competir com a informação principal do rodapé*/
+.footer-credit{
+  font-size: 13px;
+  color: var(--color-footer-credit);
+}
+
+/*RESPONSAVIDADE PARA TELAS MAIORES.
+A partir de 768px de largura, os cards passam a ficar lado a lado.
+Esse tamanho costuma representar tablets e telas maiores*/
+@media (min-width: 768px){
+
+ 
+
+/*Em telas maiores, o logo fica a esquerda e o menu fica a direita.*/
+.header .container{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+  /*Em telas maiores, os cards da seção Soluções ficam lado a lado.*/
+  .solutions-list{
+    flex-direction: row;
+  }
+
+
+   /*Em telas maiores, aumentamos o titulo principal para dar mais impacto visual.*/
+  .hero-title{
+    font-size: 36px;
+  }
+
+  /*Em telas maiores, a descrição tambem pode ficar um pouco maior sem prejudicar a leitura*/
+  .hero-description{
+    font-size: 20px;
+  }
+
+  /*Em telas maiores, aumentamos o espaçamento a Hero para dar mais impacto visual.*/
+  .hero{
+    padding: 80px 0;
+  }
+
+  /*Em tablers e desktops, as seções podem ter mais respiro vertical.*/
+  .about, .solutions, .contact{
+    padding: 70px 0;
+  }
+}
