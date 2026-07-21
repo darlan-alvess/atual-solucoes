@@ -32,6 +32,12 @@ O objetivo deste projeto foi criar uma página simples, responsiva e funcional p
 
 Durante o desenvolvimento deste projeto, pratiquei a criação de uma landing page utilizando HTML e CSS puro, aplicando conceitos como estrutura semântica, responsividade, organização de estilos, reutilização de classes, acessibilidade básica e boas práticas de manutenção com variáveis CSS.
 
+## Link do projeto
+
+Acesse o projeto publicado:
+
+https://darlan-alvess.github.io/atual-solucoes/
+
 ## Status do projeto
 
 Projeto concluído como versão inicial para portfólio.
